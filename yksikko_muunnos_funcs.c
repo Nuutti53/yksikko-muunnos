@@ -7,7 +7,7 @@ void valikko() {
   printf("Tämä ohjelma muuntaa yhdysvaltalaisia yksiköitä SI-yksiköiksi\n");
 
   do {
-    printf("\nMahdolliset toiminnot:\n");
+    printf("Mahdolliset toiminnot:\n");
     printf("1) Pituus\n");
     printf("2) Massa\n");
     printf("3) Tilavuus\n");
@@ -40,7 +40,7 @@ void valikko() {
   }while (iValinta != 0);
 }
 
-int kysyArvo() {
+float kysyArvo() {
   float fLuku;
 
   printf("\nAnna muutettava arvo: ");
@@ -55,32 +55,37 @@ int muunnaPituus() {
   int iPituusValinta;
 
   printf("\nValitse pituusyksikkö seuraavien joukosta\n");
-  printf("1) Tuuma\n");
-  printf("2) Jalka\n");
-  printf("3) Jaardi\n");
-  printf("4) Maili");
-  printf("\nAnna valintasi: ");
+  printf("1) Tuuma (in)\n");
+  printf("2) Jalka (ft)\n");
+  printf("3) Jaardi (yd)\n");
+  printf("4) Maili (mi)\n");
+  printf("Anna valintasi: ");
   scanf("%d", &iPituusValinta);
 
   switch (iPituusValinta) {
     case 1:
       fPituus = kysyArvo();
-      printf("%.3f in on %.3f m\n", fPituus, fPituus * in);
+      printf("%5.3f in on %5.3f m\n", fPituus, fPituus * in);
+      printf("\n");
       break;
     case 2:
       fPituus = kysyArvo();
       printf("%.3f ft on %.3f m\n", fPituus, fPituus * ft);
+      printf("\n");
       break;
     case 3:
       fPituus = kysyArvo();
       printf("%.3f yd on %.3f m\n", fPituus, fPituus * yd);
+      printf("\n");
       break;
     case 4:
       fPituus = kysyArvo();
       printf("%.3f mi on %.3f m\n", fPituus, fPituus * mi);
+      printf("\n");
       break;
     default:
-      printf("yksikkoa ei olemassa.\n");
+      printf("Yksikkoa ei olemassa.\n");
+      printf("\n");
       break;
   }
 
@@ -101,13 +106,15 @@ int muunnaMassa() {
     case 1:
       fMassa = kysyArvo();
       printf("%.3f oz on %.3f g\n", fMassa, fMassa * oz);
+      printf("\n");
       break;
     case 2:
       fMassa = kysyArvo();
       printf("%.3f lb on %.3f g\n", fMassa, fMassa * lb);
+      printf("\n");
       break;
     default:
-      printf("yksikkoa ei olemassa.\n");
+      printf("Yksikkoa ei olemassa.\n");
       break;
   }
   return 0;
@@ -129,21 +136,25 @@ int muunnaTilavuus() {
     case 1:
       fTilavuus = kysyArvo();
       printf("%.3f cp on %.3f l\n", fTilavuus, fTilavuus * in);
+      printf("\n");
       break;
     case 2:
       fTilavuus = kysyArvo();
       printf("%.3f pt on %.3f l\n", fTilavuus, fTilavuus * ft);
+      printf("\n");
       break;
     case 3:
       fTilavuus = kysyArvo();
       printf("%.3f qt on %.3f l\n", fTilavuus, fTilavuus * yd);
+      printf("\n");
       break;
     case 4:
       fTilavuus = kysyArvo();
       printf("%.3f gal on %.3f l\n", fTilavuus, fTilavuus * mi);
+      printf("\n");
       break;
     default:
-      printf("yksikkoa ei olemassa.\n");
+      printf("Yksikkoa ei olemassa.\n");
       break;
   }
   return 0;
@@ -157,6 +168,7 @@ int muunnaLampotila() {
   fFahrenheit = kysyArvo();
   fCelsius = (5.0 / 9.0) * (fFahrenheit - 32);
   printf("%.3f °F on %.3f °C\n", fFahrenheit, fCelsius);
+  printf("\n");
 
   return 0;
 }

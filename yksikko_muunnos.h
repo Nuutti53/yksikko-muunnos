@@ -9,7 +9,7 @@
 #define qt 0.946352946
 #define gal 3.785411784
 void valikko();
-int kysyArvo();
+float kysyArvo();
 int muunnaPituus();
 int muunnaMassa();
 int muunnaTilavuus();
